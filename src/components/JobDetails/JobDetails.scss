@@ -1,0 +1,72 @@
+@import '../../styles/variables';
+.modal-wrapper {
+  position: relative;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: #ddd;
+  border-radius: 8px;
+
+  ul {
+    font-size: 14px;
+    list-style: square;
+  }
+  p,
+  span,
+  li {
+    font-size: 14px;
+    margin: 0 !important;
+    text-indent: unset !important;
+    background: inherit !important;
+  }
+
+  .modal__header {
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .modal__date {
+    color: fuchsia;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  .modal__link {
+    font-size: 12px;
+    margin-left: 10px;
+    padding: 5px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #fff;
+    background-color: $secondary-color;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease-in-out 0.05s;
+
+    &:hover {
+      color: $secondary-color;
+      background-color: #fff;
+    }
+  }
+
+  .modal__heading {
+    margin: 10px 0;
+  }
+
+  .modal__cancel {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+}

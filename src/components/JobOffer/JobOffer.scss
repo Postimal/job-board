@@ -1,0 +1,132 @@
+@import '../../styles/variables';
+.job-item {
+  position: relative;
+  min-height: 135px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  padding: 15px 0;
+  border-radius: 8px;
+  color: $primary-color;
+  background: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, border 0.2s ease-in-out 0.2s;
+  overflow: hidden;
+
+  &.active {
+    background-color: #ddd;
+  }
+
+  &:hover,
+  &:focus {
+    background: #ddd;
+  }
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    bottom: 0px;
+    width: 8px;
+    border-radius: 8px 0 0 8px;
+    border-left: 3px solid $secondary-color;
+    transition: 0.2s;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    border-left-width: 6px;
+  }
+
+  .logo-container {
+    width: 80px;
+    height: 80px;
+    margin-right: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 45px;
+      height: auto;
+    }
+  }
+
+  &__details {
+    width: 80%;
+    padding: 2px;
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  &__title {
+    color: rgb(29, 25, 25);
+    padding: 5px 0;
+
+    .header {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__date {
+    margin-left: 60px;
+    display: flex;
+    align-items: center;
+    color: fuchsia;
+    svg {
+      height: 10px;
+      margin-right: 5px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    margin-top: 14px;
+
+    .company {
+      flex: 3;
+    }
+
+    .job-item__location {
+      display: flex;
+      align-items: center;
+      flex: 2;
+      svg {
+        height: 10px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__more-info-modal {
+    position: absolute;
+    right: 0;
+    top: 40%;
+    height: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    transform: translateX(127px);
+    outline: none;
+    transition: transform 0.25s ease-in-out 0.1s, color 0.4s ease-in-out 0.1s,
+      background-color 0.3s ease-in-out 0.1s;
+    cursor: pointer;
+
+    .open-modal-text {
+      margin-left: 10px;
+      font-size: 0.8rem;
+    }
+
+    &:hover {
+      background-color: lighten($color: $secondary-color, $amount: 15);
+      transform: translateX(0);
+      color: #fff;
+    }
+  }
+}
