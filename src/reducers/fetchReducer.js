@@ -1,5 +1,4 @@
 const fetchReducer = (state, action) => {
-  console.log(action);
   if (action.type === 'LOADING') {
     return {
       ...state,

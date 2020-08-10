@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaMapMarker, FaLaptop } from 'react-icons/fa';
-import { JobDetails } from 'components';
+import { JobDetails, Loader } from 'components';
 
 import api from '../../api';
 
@@ -12,7 +12,7 @@ const JobOffer = ({ job }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [jobDetails, setJobDetails] = useState(null);
 
-  const fetchJobDetails = async (id) => {
+  const fetchJobDetails = async id => {
     setIsLoading(true);
     try {
       const res = await api.post('offer/detail/pl', { ref_id: id });
@@ -52,15 +52,19 @@ const JobOffer = ({ job }) => {
           className="job-item__more-info-modal"
           onClick={() => {
             setShowDetails(!showDetails);
-            fetchJobDetails(job.reference);
+            !jobDetails && fetchJobDetails(job.reference);
           }}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') setShowDetails(!showDetails);
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              setShowDetails(!showDetails);
+              !jobDetails && fetchJobDetails(job.reference);
+            }
           }}
         >
           + <span className="open-modal-text">więcej szczegółow</span>
         </button>
       </div>
+      {isLoading && <Loader />}
       {error && <h3>{error.message}</h3>}
       {showDetails && jobDetails && (
         <JobDetails details={jobDetails} setShowDetails={setShowDetails} />

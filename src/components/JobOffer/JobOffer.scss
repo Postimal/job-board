@@ -123,10 +123,17 @@
       font-size: 0.8rem;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: lighten($color: $secondary-color, $amount: 15);
       transform: translateX(0);
       color: #fff;
     }
+  }
+}
+
+@media screen and (max-width: 1084px) {
+  .job-item__date {
+    margin-left: unset;
   }
 }

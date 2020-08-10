@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, RecruitmentBoard } from 'components';
+import { Title, RecruitmentBoard, ScrollToTopButton } from 'components';
 
 import './App.scss';
 
@@ -11,6 +11,7 @@ function App() {
       </header>
       <main>
         <RecruitmentBoard />
+        <ScrollToTopButton />
       </main>
     </div>
   );

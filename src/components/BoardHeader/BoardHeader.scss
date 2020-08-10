@@ -1,0 +1,20 @@
+.category__button {
+  margin: 5px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(117, 157, 241, 0.3);
+  color: #fff;
+  background-color: #093479;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.2s ease-in-out 0.05s;
+  outline: none;
+  text-transform: uppercase;
+
+  &.active,
+  &:hover,
+  &:focus {
+    color: #093479;
+    background-color: #fff;
+  }
+}

@@ -4,3 +4,6 @@ export { default as BoardHeader } from './BoardHeader';
 export { default as BoardBody } from './BoardBody';
 export { default as JobDetails } from './JobDetails';
 export { default as JobOffer } from './JobOffer';
+export { default as Loader } from './Loader';
+export { default as FilterButton } from './FilterButton';
+export { default as ScrollToTopButton } from './ScrollToTopButton';

@@ -4,7 +4,7 @@ import { FaLaptop, FaTimes } from 'react-icons/fa';
 import './JobDetails.scss';
 
 const JobDetails = ({ details, setShowDetails }) => {
-  const markup = (param) => {
+  const markup = param => {
     return { __html: param };
   };
 
@@ -29,7 +29,7 @@ const JobDetails = ({ details, setShowDetails }) => {
       <span
         className="modal__cancel"
         onClick={() => setShowDetails(false)}
-        onKeyDown={(e) => {
+        onKeyDown={e => {
           if (e.key === 'Enter') {
             setShowDetails(false);
           }

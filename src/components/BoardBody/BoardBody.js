@@ -1,15 +1,21 @@
 import React from 'react';
-import { JobOffer } from 'components';
+import { JobOffer, Loader } from 'components';
 
-const BoardBody = ({ jobs, loading }) => {
+const BoardBody = ({ jobs, loading, currentFilter }) => {
   return (
     <>
-      {loading && <div style={{ textAlign: 'center' }}>...loading...</div>}
+      {loading && <Loader />}
       {jobs && (
         <ul>
-          {jobs.map((job) => (
-            <JobOffer job={job} key={job.url} />
-          ))}
+          {jobs
+            .filter(job =>
+              currentFilter
+                ? job.category[0].toLowerCase() === currentFilter
+                : job
+            )
+            .map(job => (
+              <JobOffer job={job} key={job.url} />
+            ))}
         </ul>
       )}
     </>

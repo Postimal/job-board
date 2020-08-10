@@ -14,10 +14,15 @@
   p,
   span,
   li {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0 !important;
     text-indent: unset !important;
     background: inherit !important;
+    color: #000 !important;
+  }
+
+  ul li {
+    padding: 2px 0;
   }
 
   .modal__header {
@@ -36,6 +41,10 @@
 
     svg {
       margin-right: 5px;
+    }
+
+    span {
+      color: fuchsia !important;
     }
   }
 
@@ -68,5 +77,18 @@
     padding: 5px;
     cursor: pointer;
     outline: none;
+  }
+}
+
+@media screen and (max-width: 1084px) {
+  .modal-wrapper .modal__header {
+    flex-wrap: wrap;
+  }
+  .modal__links-box {
+    margin-top: 5px;
+  }
+
+  .job-item__date {
+    padding-left: 0;
   }
 }
