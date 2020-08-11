@@ -29,6 +29,8 @@ const ScrollToTopButton = () => {
       className={
         offset > 100 ? 'scroll-top__button rotate' : 'scroll-top__button'
       }
+      name="scrollTop/Bottom"
+      aria-label="Scroll To Top/Bottom"
       onClick={scrollToTop}
     />
   );

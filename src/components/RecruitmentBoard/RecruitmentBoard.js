@@ -14,14 +14,17 @@ const RecruitmentBoard = () => {
   const [currentFilter, setCurrentFilter] = useState(null);
 
   useEffect(() => {
+    // eslint-disable-next-line space-before-function-paren
     const fetchJobs = async () => {
       dispatch({ type: 'LOADING' });
       try {
-        const categories = await api.get('/categories/en');
-        const offers = await api.get('/offers/list/en/');
+        const data = await Promise.all([
+          api.get('/categories/en'),
+          api.get('/offers/list/en/'),
+        ]);
         dispatch({
           type: 'RESPONSE_COMPLETED',
-          payload: [categories.data, offers.data.jobs],
+          payload: [data[0].data, data[1].data.jobs],
         });
       } catch (error) {
         dispatch({ type: 'RESPONSE_FAILED' });

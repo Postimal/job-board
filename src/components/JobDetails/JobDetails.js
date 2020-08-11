@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaLaptop, FaTimes } from 'react-icons/fa';
+import { LinkComponent } from 'components';
 
 import './JobDetails.scss';
 
@@ -16,12 +17,14 @@ const JobDetails = ({ details, setShowDetails }) => {
           <span>Data zakończenia {details.expiryDate}</span>
         </div>
         <div className="modal__links-box">
-          <a className="modal__link" href={details.applicationLink}>
-            Aplikuj bezpośrednio
-          </a>
-          <a className="modal__link" href={details.urlWithLayout}>
-            Więcej o stanowisku
-          </a>
+          <LinkComponent
+            href={details.applicationLink}
+            text="Aplikuj bezpośrednio"
+          />
+          <LinkComponent
+            href={details.urlWithLayout}
+            text=" Więcej o stanowisku"
+          />
         </div>
       </div>
       <h4 className="modal__heading">Wymagania</h4>

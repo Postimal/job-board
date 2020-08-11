@@ -7,3 +7,4 @@ export { default as JobOffer } from './JobOffer';
 export { default as Loader } from './Loader';
 export { default as FilterButton } from './FilterButton';
 export { default as ScrollToTopButton } from './ScrollToTopButton';
+export { default as LinkComponent } from './LinkComponent';
